@@ -1,5 +1,5 @@
 
-SWA: 9c9a469
+SHA: 9c9a469
 link to repository with blog posts: https://github.com/natelewis17/natelewis17.github.io/tree/main
 
 I asked for feedback from Justin Ross, Tyler Smith, and Bryce Marshall.
