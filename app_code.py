@@ -23,7 +23,7 @@ if not filtered_df.empty:
     st.write(f"Showing results for: {user_input}")
     st.write(filtered_df)
 
-    # More detailed information (you can customize this based on your columns)
+    # More detailed information
     st.subheader('Details:')
     for index, row in filtered_df.iterrows():
         st.write(f"Kanji: {row['Kanji']}")
@@ -32,15 +32,6 @@ if not filtered_df.empty:
         # Add more columns as needed
 else:
     st.write(f"No matches found for: {user_input}. Please try something else.")
-
-# More detailed information
-if not filtered_df.empty:
-    st.subheader('Details:')
-    for index, row in filtered_df.iterrows():
-        st.write(f"Kanji: {row['Kanji']}")
-        st.write(f"Meanings: {row['Meanings']}")
-        st.write(f"JLPT Level: N{row['JLPT']}")
-        # Add more columns as needed
 
 # Visualization of Wiki_Ranking, Novel_Ranking, Newspaper_Ranking
 if not filtered_df.empty:
@@ -87,60 +78,53 @@ st.pyplot(fig)
 
 # Sidebar for Top 20 Kanji
 st.sidebar.title('Wikiji: Top 20 Kanji')
-st.sidebar.markdown('You will select a grouping option and then a subgrouping and a plot will be returned showing the 20 most freqeunt kanjis of that subgrouping on Wikipedia.')
-group_by_option_top20 = st.sidebar.selectbox('Select grouping option',
-                                             ['Stroke_Count', 'JLPT', 'Grade', 'In_Joyo'],
-                                             key='group_by_option_top20')
+group_by_option_top20 = st.sidebar.selectbox('Select grouping option', ['Stroke_Count', 'JLPT', 'Grade', 'In_Joyo'], key='group_by_option_top20')
 
 # Create a subcategory dropdown based on the selected grouping option
 subcategory_options = None
 if group_by_option_top20 == 'Stroke_Count':
-    subcategory_options = st.sidebar.selectbox('Select Stroke Count Range', ['<5', '5-10', '10-15', '>15'],
-                                               key='stroke_count_subcategory')
+    subcategory_options = st.sidebar.selectbox('Select Stroke Count Range', ['<5', '5-10', '10-15', '>15'], key='stroke_count_subcategory')
 elif group_by_option_top20 == 'JLPT':
-    subcategory_options = st.sidebar.selectbox('Select JLPT Level', ['1', '2', '3', '4', '5'],
-                                               key='jlpt_subcategory')
+    subcategory_options = st.sidebar.selectbox('Select JLPT Level', ['1', '2', '3', '4', '5'], key='jlpt_subcategory')
 elif group_by_option_top20 == 'Grade':
-    subcategory_options = st.sidebar.selectbox('Select Grade Level', [str(i) for i in range(1, 13)],
-                                               key='grade_subcategory')
+    subcategory_options = st.sidebar.selectbox('Select Grade Level', ['1', '2', '3', '4', '5', '6', '8', '9', '10'], key='grade_subcategory')
 elif group_by_option_top20 == 'In_Joyo':
-    subcategory_options = st.sidebar.selectbox('Select In_Joyo', ['Yes', 'No'],
-                                               key='in_joyo_subcategory')
+    subcategory_options = st.sidebar.selectbox('Select In_Joyo', ['Yes', 'No'], key='in_joyo_subcategory')
 
 # Display the title for the Top 20 section
 st.title(f'Wikiji: Top 20 Kanji - Grouped by {group_by_option_top20}')
 
 # Filter the DataFrame based on the selected grouping option and subcategory
-if group_by_option_top20 == 'Stroke_Count':
-    if subcategory_options == '<5':
-        filtered_top20_df = df[df['Stroke_Count'] < 5]
-    elif subcategory_options == '5-10':
-        filtered_top20_df = df[(df['Stroke_Count'] >= 5) & (df['Stroke_Count'] <= 10)]
-    elif subcategory_options == '10-15':
-        filtered_top20_df = df[(df['Stroke_Count'] > 10) & (df['Stroke_Count'] <= 15)]
-    elif subcategory_options == '>15':
-        filtered_top20_df = df[df['Stroke_Count'] > 15]
-elif group_by_option_top20 == 'JLPT':
-    filtered_top20_df = df[df['JLPT'] == int(subcategory_options)]
-elif group_by_option_top20 == 'Grade':
-    filtered_top20_df = df[df['Grade'] == int(subcategory_options)]
-elif group_by_option_top20 == 'In_Joyo':
-    filtered_top20_df = df[df['In_Joyo'] == subcategory_options]
+if group_by_option_top20 == 'Overall':
+    top20_df = df.nlargest(20, 'Wiki_Count')
+else:
+    if group_by_option_top20 == 'Stroke_Count':
+        if subcategory_options == '<5':
+            filtered_top20_df = df[df['Stroke_Count'] < 5]
+        elif subcategory_options == '5-10':
+            filtered_top20_df = df[(df['Stroke_Count'] >= 5) & (df['Stroke_Count'] <= 10)]
+        elif subcategory_options == '10-15':
+            filtered_top20_df = df[(df['Stroke_Count'] > 10) & (df['Stroke_Count'] <= 15)]
+        elif subcategory_options == '>15':
+            filtered_top20_df = df[df['Stroke_Count'] > 15]
+    elif group_by_option_top20 == 'JLPT':
+        filtered_top20_df = df[df['JLPT'] == int(subcategory_options)]
+    elif group_by_option_top20 == 'Grade':
+        filtered_top20_df = df[df['Grade'] == int(subcategory_options)]
+    elif group_by_option_top20 == 'In_Joyo':
+        filtered_top20_df = df[df['In_Joyo'] == subcategory_options]
 
 # Visualization of the Top 20 Kanji
 if not filtered_top20_df.empty:
     st.subheader(f'Top 20 Kanji Distribution - Grouped by {group_by_option_top20}')
 
-    # Set the font to Meiryo for correct rendering of Kanji characters
-    plt.rcParams['font.family'] = 'Meiryo'
-
-    # Create a bar plot for top 20 Kanji by Wiki_Count
+    # Create a bar plot for top 20 Kanji by Wiki_Count, using 'Meanings' on the y-axis
     top_n = 20
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.barplot(x='Wiki_Count', y='Kanji', data=filtered_top20_df.head(top_n), palette='viridis', ax=ax)
+    sns.barplot(x='Wiki_Count', y='Meanings', data=filtered_top20_df.head(top_n), palette='viridis', ax=ax)
     plt.title(f'Top {top_n} Kanji by Wiki_Count')
     plt.xlabel('Wiki_Count')
-    plt.ylabel('Kanji')
+    plt.ylabel('Meanings')
 
     # Display the plot using st.pyplot(fig)
     st.pyplot(fig)
@@ -148,5 +132,6 @@ if not filtered_top20_df.empty:
     # Add a thank you section at the bottom
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Thank you for exploring my project!")
-st.sidebar.markdown("If you're interested in more details about the project, you can find the source code on GitHub:")
+st.sidebar.markdown("If you're interested in more details about the project here's a link to my GitHub repo and blog:")
 st.sidebar.markdown("[GitHub Repository](https://github.com/natelewis17/STAT386_Project)")
+st.sidebar.markdown("[Blog](https://natelewis17.github.io/)")
