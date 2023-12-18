@@ -1,1 +1,29 @@
+SHA: 9c9a469
+link to repository with blog posts: https://github.com/natelewis17/natelewis17.github.io/tree/main
 
+I asked for feedback from Justin Ross, Tyler Smith, and Bryce Marshall.
+
+Justin gave the following feedback: 
+- I really liked how you emphasized some of the main takeaways of your findings, like when you explicitly say that intermediate Japanese learners should add the most common kanji to their vocab lists.
+- I liked going through the links that you included. There is lots of cool info on those pages!
+- Maybe make the font on the bar plot of frequency of each stroke count a little bit bigger. I was kind of having a hard time 
+seeing the the y-axis label especially. The pie chart font looked a little small as well. All of your graphs look great though!
+-  “This means that while many there are a fairly large amount of non_Joyo kanji that appear”, is there supposed to be a ‘many’ 
+in between ‘while’ and ‘there’? (Under your pie charts)
+
+Tyler gave the following feedback:
+EDA: I really enjoyed the content of your post, and to be honest it’s hard for me to come up with anything to offer
+feedback for. The one thing I thought as I read your post is that it’s a bit hard to read some of the graphs. I think your postwould be a little easier to read if some of the graphs were just a little bit. The graphs that I had the most difficulty 
+reading the numbers were: Bar Plot of Frequency of Each Stroke Count, the Pie charts, and the Top 25 Radicals - Frequency 
+Distribution. Overall this was a really interesting post and I’m grateful I am not studying Japanese!
+
+Bryce gave the following feedback:
+EDA:
+	⁃	When discussing the complexity of kanji, particularly in the context of JLPT levels, it might be helpful to clarify whether "complexity" refers to writing complexity or conceptual complexity.
+	⁃	Overall, the blog post effectively combines data analysis with insightful interpretation, well done!
+
+Feedback response:
+The main feedback I received was that the plots were too difficult to read in my original draft. While they mentioned 
+specific plots they thought were hard to read I decided to go ahead and increase the readability of all of them. To fix this
+issue I simply increased the size of all of the plots from width 600 to width 1000. I also clarified the use of the word 
+complexity as Bryce had requested. Additinally, made a few minor edits to typos.
