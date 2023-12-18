@@ -17,7 +17,10 @@ From Bryce I got this feedback:
 	⁃	Overall super cool idea and well-done so far
 
 From ELizabeth:
-I got this feedback in person instead of just over text. Unlike the other people who gave me feedback Elizabeth is also learning Japanese. Her main feedback was similar to the others as she suggested adding better text descriptions of what each plot was supposed to be. She also pointed out an error I had made in my initial response to the feedback where I duplicated the details section of the kanji explorer.
+I got this feedback in person instead of just over text. Unlike the other people who gave me feedback Elizabeth is also 
+learning Japanese. Her main feedback was similar to the others as she suggested adding better text descriptions of what each
+plot was supposed to be. She also pointed out an error I had made in my initial response to the feedback where I duplicated 
+the details section of the kanji explorer.
 
 My response:
 
@@ -28,4 +31,4 @@ added text descriptions on the sidebar about what each section was about to make
 added a short list of kanji that people could test out in the Kanji Explorer section because most of the people using this
 app probably don't know how to type in a kanji character. I also made it so that instead of a blank table appearing if 
 there's no match for your input it now has a text message saying to try a different input. I also corrected the handful of 
-typos that were pointed out to me.
+typos that were pointed out to me. Finally, I added a link to my repository and blog.
