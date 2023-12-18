@@ -1,1 +1,31 @@
+I asked for feedback from Justin Ross, Tyler Smith, and Bryce Marshall as well as a classmate from a non stats class Elizabeth Bisel.
 
+From Justin I got this feedback:
+	⁃	The sidebar you put in is a really cool idea, I really like how you implemented that. I did notice that there’s a typo on the sidebar for the word English: “Enter a Kanji or an Enlgish Meaning.” I would suggest maybe adding a list of characters for people to try typing in, as I don’t know any Kanji characters and felt a little bit lost there.
+	⁃	If you feel like you’re missing some graphs, I would recommend trying to add the same graphs from your blog post onto your app. The only difference would have to be adding some kind of interactive element.
+	⁃	Overall, I think your dashboard is great! I think it would improve the overall experience if you were to add a sentence or two above each graph that describes what the graph shows. (Ie. Select [this] and look at the graph below to see [something])
+
+From Tyler I got this feedback:
+-  I had a lot of fun searching different English meaning and seeing the associated kanji! I found the dashboard easy to navigate.
+- This is nitpicky, but maybe for kanji/English meanings that don’t exist in the data, instead of outputting an empty table, you could output some kind of text saying there is no data available.
+- I’m with Justin, I think you had really interesting plots in your blog post and I don’t think it would be too hard to include some of those in with interactive elements!
+- The Tier 1 instructions say to include a link to your Github Repo and your blog post in case people are interested in learning more so I would throw those links in!
+
+From Bryce I got this feedback:
+	⁃	Include a brief set of instructions or a tooltip to guide users on how to use the app effectively. This can be especially helpful for users who are new to learning Kanji.
+	⁃	While stroke count is a useful grouping option, consider adding more grouping options to cater to different learning preferences. This could include frequency, radicals, or thematic groupings.
+	⁃	Overall super cool idea and well-done so far
+
+From ELizabeth:
+I got this feedback in person instead of just over text. Unlike the other people who gave me feedback Elizabeth is also learning Japanese. Her main feedback was similar to the others as she suggested adding better text descriptions of what each plot was supposed to be. She also pointed out an error I had made in my initial response to the feedback where I duplicated the details section of the kanji explorer.
+
+My response:
+
+What to do for another plot was difficult to come up with for me so I sent the app with only two sections asking for ideas
+for a third. I didn't think any of my other plots made much sense as interactive elements. The response was to just use 
+something from my blog post. Fair. I decided to add a modified version of my top 20 kanji plot from my EDA post. I also 
+added text descriptions on the sidebar about what each section was about to make the app easier to use. As part of this I 
+added a short list of kanji that people could test out in the Kanji Explorer section because most of the people using this
+app probably don't know how to type in a kanji character. I also made it so that instead of a blank table appearing if 
+there's no match for your input it now has a text message saying to try a different input. I also corrected the handful of 
+typos that were pointed out to me.
