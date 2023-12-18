@@ -1,1 +1,33 @@
+I asked for feedback from Justin Ross, Tyler Smith, and Bryce Marshall.
 
+Justin gave the following feedback: 
+- Your blog was a fun read! I was blown away by the complexity of Japanese!
+- Good job including detailed code of the steps that you followed to clean and collect your data!
+ - “but how are we supposed to get anything from this list if we don’t even have data on basic info about the kanji like their stroke counts or even what they mean in English.” Consider finishing this with a question mark instead of period. (First sentence under ‘What do they Mean’ section)
+- Consider using a period after “Novel Ranking (the importance of the newspaper and novel ranking will be explored more deeply in the EDA blog post)” (Bullet points under ‘What do they Mean’ section)
+- “I then concatenate these three DataFrames and the immediately.” Is ‘the’ before ‘immediately’ supposed to be ‘then’? (In between the two code chunks right before conclusion)
+
+Tyler gave the following feedback:
+Here’s my feedback for you Nate. Im looking forward to seeing your dashboard too!
+	⁃	Data Collection: I am really impressed with your topic and web scraping! My only feedback for this post is that I found 
+the paragraph in your “To Be or Not to Be (Joyo)” section to be a little hard to follow. This sentence in particular was a 
+bit difficult for me to understand, and maybe would benefit from rewording: “I decided that as interesting for a learner as
+what are the most common kanji is the question of which of the “essential” kanji don’t appear at all.” Also in the next 
+sentence, I think it should be further instead of farther. I cannot think of anything else that needs improvement with this 
+post, great job on this one!
+
+Bryce gave the following feedback:
+Data collection: 
+	⁃	While the use of external APIs is mentioned, a brief explanation of why these APIs were chosen and their specific roles in the project could add context for readers who are not familiar with them.
+	⁃	Not needed just kinda nitpicky but the conclusion could be made more engaging by inviting readers to share their 
+thoughts, ask questions, or suggest further directions for the project. This can encourage interaction.
+	⁃	Overall, the blog post effectively communicates the data collection process and showcases a thoughtful approach to 
+learning and understanding Kanji frequencies. Great job!
+
+Feedback Response:
+
+I really appreciated my classmates for giving me this feedback. A lot of the feecback for this post was concerning small 
+typos and punctuation mistakes, so I made sure to edit my post to quickly fix these small issues. I also went in and 
+completely rewrote the sentence that Tyler said he found confusing. I also agreed with Bryce's advice and clarified why I
+was using the APIs that I had mentioned and added a sentence to my conclusion asking for feedback, comments, and questions 
+onmy blog post and project.
